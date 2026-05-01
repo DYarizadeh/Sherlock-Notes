@@ -1,0 +1,19 @@
+/Users/irek/Library/Application Support/Google/Chrome/Default/History
+Evidence Found: A record of a visit to a suspicious URL followed by the download of the Scientific-Calculator.dmg file.
+This database tracks a user’s web activity, including URLs, page titles, and timestamps. For an investigator, it provides context for the pre-infection phase, identifying the source of a download and evidence of the initial infection vector.
+
+/.Spotlight-V100/Store-V2/index.db
+Evidence Found: Metadata for Scientific-Calculator.app showing a kMDItemLastUsedDate of 2025-03-07 21:14:37.
+Spotlight indexes nearly every file and activity on macOS. It acts as a comprehensive timeline of file interaction. Even if a file is deleted, its metadata—such as original path, download source, and last used date—often persists, allowing investigators to prove execution timing.
+
+/Users/irek/Library/Application Support/com.apple.TCC/TCC.db
+Evidence Found: An entry for expooo in the client column associated with the path /Users/irek/Desktop/expooo.
+The Transparency, Consent, and Control (TCC) system manages app permissions. This database is a high-fidelity execution log; it records the absolute path of a binary at the moment it requests a sensitive permission, preserving the "original" location of malware even after it has been moved to the Trash.
+
+/Users/irek/.Trash/.DS_Store
+Evidence FOund: A record for expooo and switch_race.c within the Trash directory metadata.
+Forensic Significance: These files store folder-specific viewing preferences. In the Trash, a .DS_Store file is vital because it stores "Put Back" metadata. This allows an investigator to determine the exact directory a file was originally deleted from.
+
+
+To view PList files - use XPlist_Win.exe
+For Spotlight Parsing - Use SpotlightParser.exe
