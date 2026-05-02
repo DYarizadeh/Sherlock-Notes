@@ -24,6 +24,12 @@ Evidence Found: a .dmg image file from the deleted user left behind by MacOS
 Evidence found: When SSH was enabled 
 Forensic Significance: launchd is the macOS "master process" (PID 1, similar to systemd in linux and wininit.exe in windows) that manages the entire lifecycle of system daemons (services) and user agents, effectively acting as the conductor for everything running on the machine. The launchd.log is your primary forensic trail for these events, documenting exactly when services are enabled, bootstrapped, or terminated — which is why it’s usually the first place we look to prove a persistent configuration change.
 
+/private/var/log/system.log
+Evidence Found: When the system was booted (kernel initilization) 
+
+/private/var/log/launch.d 
+Evidence FOund: When the system was booted (service startup time) 
+
 /private/var/log/system.log 
 Evidence Found: A timestamp in system time (not UTC) of when the malicious account SSH into the device
 
